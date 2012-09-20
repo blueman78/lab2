@@ -1,0 +1,5 @@
+D:\dev\github\lab2\lab2\Intranet\bin\Intranet.dll
+D:\dev\github\lab2\lab2\Intranet\bin\Intranet.pdb
+D:\dev\github\lab2\lab2\Intranet\obj\Debug\Intranet.csprojResolveAssemblyReference.cache
+D:\dev\github\lab2\lab2\Intranet\obj\Debug\Intranet.dll
+D:\dev\github\lab2\lab2\Intranet\obj\Debug\Intranet.pdb

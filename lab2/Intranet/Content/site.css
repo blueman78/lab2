@@ -1,13 +1,44 @@
-﻿body {
+﻿body
+{
     padding-top: 60px;
     padding-bottom: 40px;
 }
 
-.sidebar-nav {
+.sidebar-nav
+{
     padding: 9px 0;
 }
 
 .field-validation-error
 {
     color: #B94A48;
+}
+
+.box
+{
+    position: relative;
+    margin: 10px auto;
+    padding: 10px;
+    width: 90%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+
+#clock
+{
+    font-size: 25px;
+    margin-top: 6px;
+}
+#bigclock 
+{
+    margin: 25px;
+    font-size:5.3em;
+    font-weight: bolder;
+}
+#myModal {
+    display: none;
 }

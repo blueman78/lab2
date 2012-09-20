@@ -7,8 +7,8 @@
     }
     else
     {
-        ViewBag.Title = "Home Page Standard Layout";
-        ViewBag.Message = "Bootstrap Standard Layout";
+        ViewBag.Title = "Lab 2";
+        ViewBag.Message = "Welcome";
         Layout = "~/Views/Shared/_Layout.cshtml";
     }
 }
@@ -16,12 +16,61 @@
 <div class="hero-unit">
     <h1>
         @ViewBag.Message</h1>
+    <div class="box">
+        JavaScrip Clock :
+        <div id="bigclock">
+        </div>
+    </div>
     <p>
-        This is a template for a simple marketing or informational website. It includes
-        a large callout called the hero unit and three supporting pieces of content. Use
-        it as a starting point to create something more unique.</p>
-    <p>
-        <a class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+        <a href="#myModal" role="button" class="btn  btn-primary btn-large" data-toggle="modal"
+            data-target="#myModal">View Code &raquo;</a></p>
+</div>
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            ×</button>
+        <h3 id="myModalLabel">
+           clock.js code</h3>
+    </div>
+    <div class="modal-body">
+    
+         <pre class="prettyprint">
+            function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            // add a zero in front of numbers<10
+            m = checkTime(m);
+            s = checkTime(s);
+
+            var day = today.getDate();
+   
+            var mon = today.getMonth();
+            var year = today.getYear();
+            year = (year < 1000) ? year + 1900 : year;
+            document.getElementById('clock').innerHTML = year + '/' + mon + '/' + day + '--' + h + ":" + m + ":" + s;
+            document.getElementById('bigclock').innerHTML = year + '/' + mon + '/' + day + '--' + h + ":" + m + ":" + s;
+            t = setTimeout(function () {
+            startTime()
+            }, 500);
+            }
+       
+            function checkTime(i) {
+            if (i < 10) {
+            i = "0" + i;
+            }
+            return i;
+            }
+            </pre>
+      
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">
+            Close</button>
+       
+    </div>
 </div>
 <!-- Example row of columns -->
 <div class="row-fluid">
