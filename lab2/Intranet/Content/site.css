@@ -42,3 +42,27 @@
 #myModal {
     display: none;
 }
+
+.span2, .span10{
+    background-color: rgb(210, 219, 233);
+    padding: 10px;
+     -webkit-border-radius: 7px;
+    
+}
+
+.game {
+    background-color: white;
+    padding: 5px;
+     -webkit-border-radius: 7px;
+}
+
+#tab2 p {
+    padding: 2px;
+    font-style: italic;
+}
+
+#tab2 #correct {
+    color: rgb(220, 12, 12);
+    font-style: normal;
+    font-weight: bold;
+    }

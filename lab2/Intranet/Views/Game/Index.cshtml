@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<section>
+
+ <div class="container">
+        
+            <div class="game">
+                <div class="tabbable">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1" data-toggle="tab">PostBack Game</a></li>
+                        <li><a href="#tab2" data-toggle="tab">JS Game</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab1">
+                        
+                        @using (Html.BeginForm("Play", "game", FormMethod.Post))
+                                {
+                                    @Html.ValidationSummary(true)
+                                    <legend>PostBack Nummergissarspel</legend>
+                                    <fieldset>
+                                        <label>Gissa</label> <input type="text" name="pb-game-input" placeholder="Gissa ett nummer..."/>
+                                         <span class="help-block">Nummer är mellan 1-10</span>
+                                        <input type="submit" value="Submit" class="btn" id="pb-game-submit" />
+                                    </fieldset>
+                                }
+
+                        </div>
+                        <div class="tab-pane" id="tab2">
+                           
+                       
+                              <legend>JS Nummergissarspel</legend>
+                              <label>Gissa</label>
+                              <input type="text" placeholder="Gissa ett nummer..." id="js-game-input">
+                              <span class="help-block">Nummer är mellan 1-10</span>
+                             
+                              <button type="submit" class="btn" id="js-game-submit">Submit</button>
+                      
+                           <div id="js-game-results"></div>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+      
+</div>
+
+</section>
