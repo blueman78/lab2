@@ -14,12 +14,12 @@
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab1">
                         
-                        @using (Html.BeginForm("Play", "game", FormMethod.Post))
+                        @using (Html.BeginForm("Postbackgame", "game", FormMethod.Post))
                                 {
                                     @Html.ValidationSummary(true)
                                     <legend>PostBack Nummergissarspel</legend>
                                     <fieldset>
-                                        <label>Gissa</label> <input type="text" name="pb-game-input" placeholder="Gissa ett nummer..."/>
+                                        <label>Gissa</label> <input type="text" name="pbgameinput" placeholder="Gissa ett nummer..."/>
                                          <span class="help-block">Nummer är mellan 1-10</span>
                                         <input type="submit" value="Submit" class="btn" id="pb-game-submit" />
                                     </fieldset>

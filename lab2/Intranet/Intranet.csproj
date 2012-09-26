@@ -78,6 +78,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
     <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\me.jpg" />
     <Content Include="Content\pretty.css" />
     <Content Include="Content\site.css" />
     <Content Include="Global.asax" />
@@ -130,6 +131,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Game\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Game\play.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Game\jsgame.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Game\Postbackgame.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Arash.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

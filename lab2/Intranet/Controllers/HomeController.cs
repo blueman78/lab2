@@ -17,5 +17,10 @@ namespace Intranet.Controllers
         {
             return View();
         }
+
+        public ActionResult Arash()
+        {
+            return View();
+        }
     }
 }
