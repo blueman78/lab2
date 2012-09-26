@@ -2,12 +2,21 @@
     ViewBag.Title = "jsgame";
 }
 <div class="game">
-     <legend>JS Nummergissarspel</legend>
+     <legend>JS Nummergissarspel  <a href="#" role="button" class="btn btn-info" id="js-game-reset" >Reset Game</a></legend>
                               <label>Gissa</label>
-                              <input type="text" placeholder="Gissa ett nummer..." id="js-game-input">
+                              @{
+                                  var htmlAttr = new Dictionary<string, object>();
+                                  htmlAttr.Add("placeholder", "Gissa ett nummer...");
+                               
+                                 
+                              }
+                              @Html.TextBox("js-game-input","",htmlAttr)
+
                               <span class="help-block">Nummer är mellan 1-10</span>
                              
                               <button type="submit" class="btn" id="js-game-submit">Submit</button>
-                      
-                           <div id="js-game-results"></div>
+                                
+    <div id="js-game-results"></div>
+    
+            
 </div>

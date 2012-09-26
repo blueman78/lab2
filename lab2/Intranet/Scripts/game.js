@@ -1,4 +1,5 @@
 ﻿document.getElementById('js-game-submit').addEventListener('click', game, false);
+document.getElementById('js-game-reset').addEventListener('click', resetpage, false);
 
 var isInteger_re = /^\s*(\+|-)?\d+\s*$/;
 function isInteger(s) {
@@ -26,4 +27,8 @@ function game() {
         document.getElementById('js-game-submit').disabled = true;
     }
 
+}
+
+function resetpage() {
+    document.location.reload(true);
 }

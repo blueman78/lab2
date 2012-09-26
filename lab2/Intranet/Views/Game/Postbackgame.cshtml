@@ -1,13 +1,26 @@
 ﻿@{
     ViewBag.Title = "postbackgame";
 }
+@using (Html.BeginForm("Reset", "game", FormMethod.Post))
+{
+    <button name="resetGame" role="button" class="btn btn-info" id="resetGame" >Reset Game</button>
+}
 
-  @using (Html.BeginForm("Postbackgame", "game", FormMethod.Post))
+@using (Html.BeginForm("Postbackgame", "game", FormMethod.Post))
                                 {
                                     @Html.ValidationSummary(true)
-                                    <legend>PostBack Nummergissarspel</legend>
+                                    <legend>PostBack Nummergissarspel  </legend>
                                     <fieldset>
-                                        <label>Gissa</label> <input type="text" name="pbgameinput" placeholder="Gissa ett nummer..."/>
+                                        <label>Gissa</label> 
+                                         @{
+                                  var htmlAttr = new Dictionary<string, object>();
+                                  htmlAttr.Add("placeholder", "Gissa ett nummer...");
+                                
+                               
+                                 
+                              }
+                              @Html.TextBox("pbgameinput", "", htmlAttr)
+                                       
                                          <span class="help-block">Nummer är mellan 1-10</span>
                                         <input type="submit" value="Submit" class="btn" id="pb-game-submit" />
                                     </fieldset>

@@ -32,7 +32,7 @@ namespace Intranet.Controllers
         }
 
       [HttpPost]
-        public ActionResult Postbackgame(int pbgameinput)
+        public ActionResult Postbackgame(int pbgameinput=0)
         {
             if (Session["correctNumber"] == null)
             {
@@ -47,16 +47,17 @@ namespace Intranet.Controllers
 
           var correctAnswer =(int) Session["correctNumber"];
 
-          var count = 0;
+          var count =(int) Session["tries"]+1;
+          
           if (pbgameinput > correctAnswer)
           {
               ViewBag.GameMessage = "Lower";
-              count++;
+             
           }
           else if (pbgameinput < correctAnswer)
           {
               ViewBag.GameMessage = "Higher";
-              count++;
+            
           }
           else
           {
@@ -70,6 +71,16 @@ namespace Intranet.Controllers
 
         public ActionResult Jsgame()
         {
+            return View();
+        }
+
+        public ActionResult Reset()
+        {
+            var rnd = new Random();
+            int randomNumber = rnd.Next(1, 10);
+            Session["correctNumber"] = randomNumber;
+            Session["tries"] = 0;
+
             return View();
         }
 
