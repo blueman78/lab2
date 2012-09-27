@@ -5,10 +5,12 @@
 <div class="hero-unit">
     <object width="250" height="40" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="gsSong2335364011" name="gsSong2335364011"><param name="movie" value="http://grooveshark.com/songWidget.swf" /><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=cowbell.grooveshark.com&songIDs=23353640&style=metal&p=0" /><object type="application/x-shockwave-flash" data="http://grooveshark.com/songWidget.swf" width="250" height="40"><param name="wmode" value="window" /><param name="allowScriptAccess" value="always" /><param name="flashvars" value="hostname=cowbell.grooveshark.com&songIDs=23353640&style=metal&p=0" /><span>Playmate In Paradise by <a href="http://grooveshark.com/artist/Klaus+Schulze/78348" title="Klaus Schulze">Klaus Schulze</a> on Grooveshark</span></object></object>
 
+
     <h1>
         <img src="../../Content/images/me.jpg" alt='' id='me' />
         @ViewBag.Message
     </h1>
+
     <table class="table table-hover table-bordered">
       
         <tbody>
@@ -54,6 +56,7 @@
             </tr>
         </tbody>
     </table>
+
     <div id='starter'>
     </div>
 </div>
@@ -67,6 +70,7 @@
             <li><a href="#tab3" data-toggle="tab">Kompetens</a></li>
             <li><a href="#tab4" data-toggle="tab">Utbildning och Kurser</a></li>
             <li><a href="#tab5" data-toggle="tab">Personliga intressen</a></li>
+            <li><a href="#tab6" data-toggle="tab">Twitter Feed</a></li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="tab1">
@@ -302,21 +306,26 @@
             <div class="tab-pane" id="tab5">
                 <h4>
                     Personliga intressen</h4>
-                    <hr />
-                    <h5>Språk</h5>
-                 <ul>
-                 <li>Engelska</li>
-                  <li>Svenska</li>
-                   <li>Persiska</li>
+                <hr />
+                <h5>Språk</h5>
+                <ul>
+                    <li>Engelska</li>
+                    <li>Svenska</li>
+                    <li>Persiska</li>
                     <li>Turkiska</li>
-                 </ul>
-                   <h5>Personliga intressen</h5>
-                     <ul>
-                 <li>Fotografi</li>
-                  <li>Skior</li>
-                   <li>Böker</li>
+                </ul>
+                <h5>Personliga intressen</h5>
+                <ul>
+                    <li>Fotografi</li>
+                    <li>Skior</li>
+                    <li>Böker</li>
      
-                 </ul>
+                </ul>
+            </div>
+            <div class="tab-pane" id="tab6">
+                <a class="twitter-timeline" href="https://twitter.com/BlizzardCS" data-widget-id="251231307441520640">Tweets by BlizzardCS</a>
+<script>    !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");</script>
+
             </div>
         </div>
     </div>

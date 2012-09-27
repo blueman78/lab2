@@ -13,7 +13,8 @@
     var year = today.getYear();
     year = (year < 1000) ? year + 1900 : year;
     document.getElementById('clock').innerHTML = year + '/' + mon + '/' + day + '--' + h + ":" + m + ":" + s;
-    document.getElementById('bigclock').innerHTML = year + '/' + mon + '/' + day + '--' + h + ":" + m + ":" + s;
+    p = document.getElementById('bigclock');
+    if(p!==null) document.getElementById('bigclock').innerHTML = year + '/' + mon + '/' + day + '--' + h + ":" + m + ":" + s;
     t = setTimeout(function () {
         startTime()
     }, 500);

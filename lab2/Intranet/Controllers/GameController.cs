@@ -32,7 +32,7 @@ namespace Intranet.Controllers
         }
 
       [HttpPost]
-        public ActionResult Postbackgame(int pbgameinput=0)
+        public ActionResult Postbackgame(string pbgameinput=null)
         {
             if (Session["correctNumber"] == null)
             {
@@ -40,21 +40,25 @@ namespace Intranet.Controllers
                 int randomNumber = rnd.Next(1, 10);
                 Session["correctNumber"] = randomNumber;
                 Session["tries"] = 0;
+                ViewBag.error = null;
             }
 
-            //ViewBag.CorrectNumber = Session["correctNumber"];
-            //ViewBag.InputNumber = pbgameinput;
+            int num;
+            bool isNum = int.TryParse(pbgameinput, out num);
+            if(!isNum)
+                ViewBag.error = "Ange ett nummer!";
+      
 
           var correctAnswer =(int) Session["correctNumber"];
 
           var count =(int) Session["tries"]+1;
-          
-          if (pbgameinput > correctAnswer)
+
+          if (num > correctAnswer)
           {
               ViewBag.GameMessage = "Lower";
              
           }
-          else if (pbgameinput < correctAnswer)
+          else if (num < correctAnswer)
           {
               ViewBag.GameMessage = "Higher";
             
@@ -74,10 +78,10 @@ namespace Intranet.Controllers
             return View();
         }
 
-        public ActionResult Reset()
+        public ActionResult Reset(int limit=10)
         {
             var rnd = new Random();
-            int randomNumber = rnd.Next(1, 10);
+            int randomNumber = rnd.Next(1, limit);
             Session["correctNumber"] = randomNumber;
             Session["tries"] = 0;
 

@@ -1,30 +1,53 @@
 ﻿@{
     ViewBag.Title = "postbackgame";
 }
+   @{
+                               var htmlAttr = new Dictionary<string, object>();
+                               htmlAttr.Add("placeholder", "Gissa ett nummer...");
+                               var htmlattr2 = new Dictionary<string, object>();
+                               htmlattr2.Add("placeholder", "begränsa 1-?");
+                               
+                                 
+                              }
 @using (Html.BeginForm("Reset", "game", FormMethod.Post))
 {
-    <button name="resetGame" role="button" class="btn btn-info" id="resetGame" >Reset Game</button>
+     <fieldset>
+         @Html.TextBox("limit", "", htmlattr2) 
+          <span class="help-block">sätt gränsen och starta om spelet</span>
+         <button name="resetGame" role="button" class="btn btn-info" id="resetGame" >Reset Game</button>
+    </fieldset>
 }
 
 @using (Html.BeginForm("Postbackgame", "game", FormMethod.Post))
-                                {
+{
                                     @Html.ValidationSummary(true)
                                     <legend>PostBack Nummergissarspel  </legend>
                                     <fieldset>
                                         <label>Gissa</label> 
-                                         @{
-                                  var htmlAttr = new Dictionary<string, object>();
-                                  htmlAttr.Add("placeholder", "Gissa ett nummer...");
-                                
-                               
-                                 
-                              }
+                                      
                               @Html.TextBox("pbgameinput", "", htmlAttr)
                                        
                                          <span class="help-block">Nummer är mellan 1-10</span>
-                                        <input type="submit" value="Submit" class="btn" id="pb-game-submit" />
+                                        <input type="submit" value="Submit" class="btn" id="pb-game-submit" @if (ViewBag.GameMessage == "done")
+                                                                                                            {
+                                                                                                                @:disabled="disabled"
+  
+                                                                                                            }/>
                                     </fieldset>
-                                }
-                                
-                             
-<p>  @ViewBag.tries    @ViewBag.GameMessage </p>
+}
+@if (ViewBag.GameMessage == "done")
+{
+       <p id="red">  @ViewBag.tries    @ViewBag.GameMessage </p>
+  
+}
+else
+{
+
+    <p>  @ViewBag.tries    @ViewBag.GameMessage </p>
+}
+@if (ViewBag.error != null)
+{
+    <p id="red">   @ViewBag.error </p>
+}
+
+<p> correct answer : @Session["correctNumber"]</p>

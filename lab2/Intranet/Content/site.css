@@ -65,3 +65,11 @@
     font-style: normal;
     font-weight: bold;
     }
+    
+    #red {
+        color:red;
+    }
+    
+    #limit {
+        width: 90px;
+    }
